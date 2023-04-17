@@ -1,4 +1,4 @@
-<template>子页面2 测试</template>
+<template>子页面2</template>
 
 <script setup></script>
 <style lang="scss">
