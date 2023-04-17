@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "target": "esnext", //用于指定 TS 最后编译出来的 ES 版本
+    "types": ["vite/client"], //要包含的类型声明文件名列表
+    "useDefineForClassFields": true, //将 class 声明中的字段语义从 [[Set]] 变更到 [[Define]]
+    "module": "esnext", // 设置编译后代码使用的模块化系统：commonjs | UMD | AMD | ES2020 | ESNext | System
+    "moduleResolution": "node", // 模块解析策略，ts默认用node的解析策略，即相对的方式导入
+    "strict": true, //开启所有的严格检查
+    "jsx": "preserve", //在 `.tsx`文件里支持JSX： `"React"`或 `"Preserve"`
+    "sourceMap": false, // 生成目标文件的sourceMap文件
+    "resolveJsonModule": true, //允许导入扩展名为“.json”的模块
+    "isolatedModules": true, //确保每个文件都可以在不依赖其他导入的情况下安全地进行传输
+    "esModuleInterop": true, //支持导入 CommonJs 模块
+    "lib": ["esnext", "dom", "ES2015"], //TS需要引用的库，即声明文件，es5 默认引用dom、es5、scripthost,如需要使用es的高级版本特性，通常都需要配置，如es8的数组新特性需要引入"ES2019.Array",
+    // "noLib": false, //不包含默认的库文件（ lib.d.ts）
+    "skipLibCheck": true, //忽略所有的声明文件（ *.d.ts）的类型检查
+    "allowJs": true, // 允许编译器编译JS，JSX文件
+    "noEmit": true, // 不输出文件,即编译后不会生成任何js文件
+    "allowSyntheticDefaultImports": true, //允许从没有设置默认导出的模块中默认导入。这并不影响代码的输出，仅为了类型检查。默认值：module === "system" 或设置了 --esModuleInterop 且 module 不为 es2015 / esnext
+    "baseUrl": "./", //基本目录来解析非绝对模块名
+    "paths": {
+      "@/*": ["src/*"], //解决引入报错  找不到模块“@/xxxx” 或其相应的类型声明
+      "@Project": ["src/Project/*"]
+    }
+  },
+  "include": [
+    "scripts/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "scripts/index.mts",
+    "scripts/template-ts/router/routes.ts",
+    "scripts/template-ts/router/index.ts",
+    "scripts/template-ts/main.ts",
+    "src/env.d.ts",
+    "src/global.d.ts"
+  ],
+  "exclude": ["vite.config.ts"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

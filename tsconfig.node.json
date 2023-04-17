@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "allowJs": true, // 允许编译器编译JS，JSX文件
+    "paths": {
+      "@/*": ["src/*"] //解决引入报错  找不到模块“@/xxxx” 或其相应的类型声明
+    }
+  },
+  "exclude": ["vite.config.ts"]
+}
