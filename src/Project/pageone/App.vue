@@ -1,4 +1,8 @@
-<template>子页面1</template>
+<template>
+  子页面1
+
+  <div>的方式地方</div>
+</template>
 
 <script setup>
 console.log(import.meta.env)

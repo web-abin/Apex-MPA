@@ -5,6 +5,7 @@ chalk.level = 1
 // 引入console插件
 import boxen from 'boxen'
 
+console.log('----------------------------------------')
 // 挂载boxen
 console.boxen = (text) => {
   const options = {
