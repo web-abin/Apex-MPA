@@ -1,6 +1,8 @@
 <template>子页面2</template>
 
-<script setup></script>
+<script setup>
+console.log()
+</script>
 <style lang="scss">
 #app {
   font-family: PingFangSC-Regular;
