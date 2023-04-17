@@ -2,6 +2,7 @@
   "name": "vue3-mpa",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",
