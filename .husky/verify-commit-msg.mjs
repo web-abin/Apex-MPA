@@ -2,10 +2,9 @@ import fs from 'fs'
 import chalk from 'chalk'
 //设置chalk等级 解决颜色无效问题
 chalk.level = 1
-// 引入console插件
+// 引入node控制台输出盒子插件
 import boxen from 'boxen'
 
-console.log('----------------------------------------')
 // 挂载boxen
 console.boxen = (text) => {
   const options = {
@@ -86,6 +85,7 @@ try {
     process.exit(1)
   }
 } catch (err) {
-  console.boxen(err)
+  console.error(err)
+  console.boxen('commit 提交异常')
   process.exit(1)
 }
