@@ -1,5 +1,10 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import Components from 'unplugin-vue-components/vite' //组件自动按需引入
+import { VantResolver } from 'unplugin-vue-components/resolvers'
+import autoImport from 'unplugin-auto-import/vite' //自动导入 Composition API
+import { visualizer } from 'rollup-plugin-visualizer' //打包size分析工具
+import compression from 'vite-plugin-compression' //gzip/br 压缩
 import path from 'path'
 import chalk from 'chalk'
 
@@ -19,11 +24,11 @@ const getEnterPages = () => {
   const filterArr = project.filter(
     (item) => item.chunk.toLowerCase() == npm_config_page.toLowerCase()
   )
-  if (!filterArr.length) {
+  if (!filterArr.length)
     errorLog(
       '-------------------不存在此页面，请检查页面名称！-------------------'
     )
-  }
+
   return {
     [npm_config_page]: path.resolve(
       __dirname,
@@ -37,7 +42,37 @@ export default defineConfig({
   root: path.resolve(__dirname, `./src/Project/${npm_config_page}`),
   base: '/',
   envDir: path.resolve(__dirname), //用于加载 .env 文件的目录。可以是一个绝对路径，也可以是相对于项目根的路径。
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    Components({
+      resolvers: [VantResolver()]
+    }),
+    autoImport({
+      imports: ['vue', 'vue-router', 'pinia'],
+      dts: path.resolve(__dirname, './auto-import.d.ts'),
+      eslintrc: {
+        // 已存在文件设置默认 false，需要更新时再打开，防止每次更新都重新生成
+        enabled: false,
+        // 生成文件地址和名称
+        filepath: path.resolve(__dirname, './.eslintrc-auto-import.json'),
+        globalsPropValue: true
+      }
+    }),
+    visualizer(),
+    // gzip格式
+    compression({
+      threshold: 1024 * 500, // 体积大于 threshold 才会被压缩,单位 b
+      ext: '.gz', // 压缩文件格式
+      deleteOriginFile: false // 是否删除源文件
+    })
+    // br格式
+    // compression({
+    //   threshold: 1024 * 500,    // 体积大于 threshold 才会被压缩,单位 b
+    //   ext: '.br',
+    //   algorithm: 'brotliCompress',
+    //   deleteOriginFile: false
+    // })
+  ],
   resolve: {
     alias: {
       '@': path.join(__dirname, './src'),

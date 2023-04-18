@@ -1,7 +1,8 @@
 <template>子页面1</template>
 
 <script setup>
-console.log(import.meta.env)
+const test = ref('Composition API 自动引入')
+console.log(test.value)
 </script>
 <style lang="scss">
 #app {
