@@ -7,6 +7,11 @@ console.log(test.value)
 <style lang="scss">
 #app {
   font-family: PingFangSC-Regular;
-  font-size: 3.733vw;
+  font-size: 4vw;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
