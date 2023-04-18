@@ -19,14 +19,14 @@ const errorLog = (error) => console.log(chalk.red(`${error}`))
 const getEnterPages = () => {
   if (!npm_config_page)
     errorLog(
-      '-------------------请在命令行后以 `--page=页面名称` 格式指定页面名称！-------------------'
+      '--------------请在命令行后以 `--page=页面名称` 格式指定页面名称！---------------'
     )
   const filterArr = project.filter(
     (item) => item.chunk.toLowerCase() == npm_config_page.toLowerCase()
   )
   if (!filterArr.length)
     errorLog(
-      '-------------------不存在此页面，请检查页面名称！-------------------'
+      '-----------------------不存在此页面，请检查页面名称！-------------------------'
     )
 
   return {
