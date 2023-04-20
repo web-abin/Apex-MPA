@@ -40,6 +40,11 @@
 > 安装依赖
 
 ```
+  //全局安装 pnpm
+  npm install -g pnpm
+  //切换淘宝源
+  pnpm config set registry https://registry.npmmirror.com/
+
   pnpm i
 ```
 
