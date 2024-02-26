@@ -2,7 +2,7 @@
 
 <script setup>
 const test = ref('Composition API 自动引入')
-  console.log(  test.value)
+  console.log(test.value)
 </script>
 <style lang="scss">
 #app {
