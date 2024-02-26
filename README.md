@@ -48,6 +48,11 @@
   pnpm i
 ```
 
+> 启动测试页面
+```
+npm run dev --page=pageone
+```
+
 > 创建子项目
 
 ```js
