@@ -85,9 +85,9 @@ npm run new:page --ts
 npm run dev --page=页面名称
 ```
 
-> 配置参数，在命令行上放置--foo bar 设置 foo 配置参数为 bar。 一个 -- 参数(argument)告诉 cli 解析器停止读取 flags.一个 在命令行结尾的--flag 参数(parameter)的值将会是 true。  
-> 然后在 vite.config.ts 中可以获取参数来进行打包对应的项目  
-> 用 process.env.npm_config_page 获取参数   
+配置参数，在命令行上放置--foo bar 设置 foo 配置参数为 bar。 一个 -- 参数(argument)告诉 cli 解析器停止读取 flags.一个 在命令行结尾的--flag 参数(parameter)的值将会是 true。  
+然后在 vite.config.ts 中可以获取参数来进行打包对应的项目  
+用 process.env.npm_config_page 获取参数   
 
 ### 打包指定子项目
 
