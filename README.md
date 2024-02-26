@@ -119,4 +119,4 @@ npm run build:test --page=页面名称
 
 另外，如果本脚手架对你有帮助，希望可以点个star ⭐️⭐️⭐️ 谢谢🌹🌹🌹
 
-<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/41e184c1bc6d45448bab47a12ff28940~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=750&h=1344&s=270989&e=png&b=f1f3f9" alt="image.png" width="30%" />
+<img src="https://web-abin.gitee.io/abin-web/assets/qq-code-30f0f86d.jpeg" alt="image.png" width="30%" />
