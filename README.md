@@ -1,4 +1,14 @@
-## 1.项目结构
+# 🎉 🎉 🎉 Vue3-Mpa 🎉 🎉 🎉
+Vue3-Mpa是一个基于vue3+vite的多页面脚手架，开箱即用。 
+
+## 特性🌼
+- 支持命令行一键创建子项目，并且可选是否使用ts
+- 支持直接启动指定子项目
+- 支持打包指定子项目
+- 配置完善的工程化工具，包括 esint、prettier、stulelint、husky、lint-stage、commitlint 
+- 配置一些基本的插件，例如自动引入Composition API、打包size分析工具、打包压缩工具
+
+## 1.项目结构 📖
 
 ```
 ├── README.md
@@ -35,7 +45,7 @@
 
 ```
 
-## 2.如何使用
+## 2.如何使用 🔑
 
 ### 安装依赖
 
@@ -102,3 +112,11 @@ npm run build --page=页面名称
 ```js
 npm run build:test --page=页面名称
 ```
+
+## 说在最后 💝
+
+本模版只支持打包指定子项目，不能一次性打包所有子项目。如果你想改成支持打包所有子项目的，可以在`vite.config.ts`中修改root和相关的一些配置，具体可以看文章 [2023 最新最细 vite+vue3+ts 多页面项目架构，建议收藏备用！](https://juejin.cn/post/7223286759630127159#heading-23)，文章第九章有提到。
+
+另外，如果本脚手架对你有帮助，希望可以点个star ⭐️⭐️⭐️ 谢谢🌹🌹🌹
+
+<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/41e184c1bc6d45448bab47a12ff28940~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=750&h=1344&s=270989&e=png&b=f1f3f9" alt="image.png" width="30%" />
