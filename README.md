@@ -37,7 +37,7 @@
 
 ## 2.如何使用
 
-> 安装依赖
+### 安装依赖
 
 ```
   //全局安装 pnpm
@@ -48,40 +48,54 @@
   pnpm i
 ```
 
-> 创建子项目
+### 启动测试页面
+
+```
+npm run dev --page=pageone
+```
+
+### 创建子项目
+
+执行以下命令：
 
 ```js
 npm run new:page
-//然后会提示：请输入要生成的'页面名称:页面描述'、会生成在 /src/Project 目录下
-//注意： 有两个页面模版，如果要用ts，可以执行  npm run new:page --ts
-例如输入：mypage:我的页面
-//完成后 会在 scripts/multiPages.json 中生成对应的数据 后期删除需要删除对应的数据来保持一致 内容数据如下：
+
+// 创建使用ts的子项目：
+npm run new:page --ts
+```
+
+执行命令后终端提示：请输入要生成的'页面名称:页面描述'、会生成在 /src/Project 目录下  
+例如输入：mypage:我的页面  
+输入页面信息回车确认后，会在 scripts/multiPages.json 中生成对应的数据，后期如果要删除页面最好删除对应的数据以保持一致
+
+在`multiPages.json`页面中可以查看各个页面的功能，格式如下：
+
+```js
 [
-  { "chunk": "pageone", "chunkName": "页面1"},
-  { "chunk": "pagetwo", "chunkName": "页面2" },
-  { "chunk": "pagethree", "chunkName": "页面3" }
+  { chunk: 'pageone', chunkName: '页面1' },
+  { chunk: 'pagetwo', chunkName: '页面2' },
+  { chunk: 'pagethree', chunkName: '页面3' }
 ]
 ```
 
-> 运行指定子项目
+### 运行指定子项目
 
 ```js
-/* 配置参数，在命令行上放置--foo bar设置foo配置参数为bar。 一个 -- 参数(argument)告诉cli解析器停止读取flags.一个 在命令行结尾的--flag参数(parameter)的值将会是true。
-然后在vite.config.ts中可以获取参数来进行打包对应的项目
-用 process.env.npm_config_page 获取参数 */
 npm run dev --page=页面名称
 ```
 
-> 打包指定子项目
+配置参数，在命令行上放置--foo bar 设置 foo 配置参数为 bar。 一个 -- 参数(argument)告诉 cli 解析器停止读取 flags.一个 在命令行结尾的--flag 参数(parameter)的值将会是 true。  
+然后在 vite.config.ts 中可以获取参数来进行打包对应的项目  
+用 process.env.npm_config_page 获取参数   
+
+### 打包指定子项目
 
 正式环境打包：
-
 ```js
 npm run build --page=页面名称
 ```
-
 测试环境打包：
-
 ```js
 npm run build:test --page=页面名称
 ```
