@@ -112,3 +112,11 @@ npm run build --page=页面名称
 ```js
 npm run build:test --page=页面名称
 ```
+
+## 说在最后
+
+本模版只支持打包指定子项目，不能一次性打包所有子项目。如果你想改成支持打包所有子项目的，可以在`vite.config.ts`中修改root和相关的一些配置，具体可以看文章 [2023 最新最细 vite+vue3+ts 多页面项目架构，建议收藏备用！](https://juejin.cn/post/7223286759630127159#heading-23)，文章第九章有提到。
+
+另外，如果本脚手架对你有帮助，希望可以点个star ⭐️⭐️⭐️ 谢谢🌹🌹🌹
+
+<img src="https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/41e184c1bc6d45448bab47a12ff28940~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=750&h=1344&s=270989&e=png&b=f1f3f9" alt="image.png" width="30%" />
