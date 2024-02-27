@@ -6,6 +6,7 @@
     "dev": "vite --mode development",
     "build": "vite build",
     "build:test": "vite build --mode development",
+    "build:all": "node ./scripts/build.cjs",
     "new:page": "node ./scripts/index.mjs",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
     "lint:script": "eslint --fix --ext .js --ext .ts --ext .vue src/",
