@@ -6,7 +6,8 @@ Vue3-Mpa 是一个开箱即用的企业级多页面脚手架，基于 vue3+vite�
 
 - 支持命令行一键创建子项目，并且可选是否使用 ts
 - 支持直接启动指定子项目
-- 支持打包指定子项目
+- 既支持打包指定子项目、也支持全量打包
+- 打包后的chunk，各子项目完全脱离解耦，降低风险
 - 配置完善的工程化工具，包括 esint、prettier、stulelint、husky、lint-stage、commitlint
 - 配置一些基本的插件，例如自动引入 Composition API、打包 size 分析工具、打包压缩工具
 
