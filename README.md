@@ -1,12 +1,14 @@
 # 🎉 🎉 🎉 Vue3-Mpa 🎉 🎉 🎉
-Vue3-Mpa是一个基于vue3+vite的多页面脚手架，开箱即用。 
 
-## 特性🌼
-- 支持命令行一键创建子项目，并且可选是否使用ts
+Vue3-Mpa 是一个开箱即用的企业级多页面脚手架，基于 vue3+vite，配备各种工程化工具。
+
+## 特性 🌼
+
+- 支持命令行一键创建子项目，并且可选是否使用 ts
 - 支持直接启动指定子项目
 - 支持打包指定子项目
-- 配置完善的工程化工具，包括 esint、prettier、stulelint、husky、lint-stage、commitlint 
-- 配置一些基本的插件，例如自动引入Composition API、打包size分析工具、打包压缩工具
+- 配置完善的工程化工具，包括 esint、prettier、stulelint、husky、lint-stage、commitlint
+- 配置一些基本的插件，例如自动引入 Composition API、打包 size 分析工具、打包压缩工具
 
 ## 1.项目结构 📖
 
@@ -47,7 +49,7 @@ Vue3-Mpa是一个基于vue3+vite的多页面脚手架，开箱即用。
 
 ## 2.如何使用 🔑
 
-### 安装依赖
+### 🪴安装依赖
 
 ```
   //全局安装 pnpm
@@ -58,13 +60,13 @@ Vue3-Mpa是一个基于vue3+vite的多页面脚手架，开箱即用。
   pnpm i
 ```
 
-### 启动测试页面
+### 🪴启动测试页面
 
 ```
 npm run dev --page=pageone
 ```
 
-### 创建子项目
+### 🪴创建子项目
 
 执行以下命令：
 
@@ -89,7 +91,7 @@ npm run new:page --ts
 ]
 ```
 
-### 运行指定子项目
+### 🪴运行指定子项目
 
 ```js
 npm run dev --page=页面名称
@@ -99,24 +101,32 @@ npm run dev --page=页面名称
 然后在 vite.config.ts 中可以获取参数来进行打包对应的项目  
 用 process.env.npm_config_page 获取参数
 
-### 打包指定子项目
+### 🪴打包
 
-正式环境打包：
+> **正式环境打包**
 
+单页面打包：
 ```js
 npm run build --page=页面名称
 ```
+全量打包：
+```js
+npm run build:all
+```
 
-测试环境打包：
+> **测试环境打包**   
 
+单页面打包：
 ```js
 npm run build:test --page=页面名称
+```
+全量打包：
+```js
+npm run build:all test
 ```
 
 ## 说在最后 💝
 
-本模版只支持打包指定子项目，不能一次性打包所有子项目。如果你想改成支持打包所有子项目的，可以在`vite.config.ts`中修改root和相关的一些配置，具体可以看文章 [2023 最新最细 vite+vue3+ts 多页面项目架构，建议收藏备用！](https://juejin.cn/post/7223286759630127159#heading-23)，文章第九章有提到。
-
-另外，如果本脚手架对你有帮助，希望可以点个star ⭐️⭐️⭐️ 谢谢🌹🌹🌹
+如果本脚手架对你有帮助，希望可以点个 star ⭐️⭐️⭐️ 谢谢 🌹🌹🌹
 
 <img src="https://web-abin.gitee.io/abin-web/assets/qq-code-30f0f86d.jpeg" alt="image.png" width="30%" />
