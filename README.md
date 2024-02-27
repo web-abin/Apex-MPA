@@ -22,6 +22,7 @@ Vue3-Mpa 是一个开箱即用的企业级多页面脚手架，基于 vue3+vite�
 ├── scripts //存放一些脚本
 │   ├── template         //创建子页面的js模版
 │   ├── template-ts      //创建子页面的ts模版
+│   ├── build.cjs        //全量打包的脚本
 │   ├── index.mjs        //创建子页面的脚本
 │   └── multiPages.json  //子页面描述说明集合文件
 ├── src
