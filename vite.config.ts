@@ -9,22 +9,24 @@ import path from 'path'
 import chalk from 'chalk'
 
 // 引入多页面配置文件
-const project = require('./scripts/multiPages.json')
+const project = require('./src/Project/multiPages.json')
 // 获取npm run dev后缀 配置的环境变量
 const npm_config_page: string = process.env.npm_config_page || ''
+// 获取当前运行的脚本名称
+const npm_lifecycle_event: string = process.env.npm_lifecycle_event || ''
 // 命令行报错提示
 const errorLog = (error) => console.log(chalk.red(`${error}`))
 
 //获取指定的单页面入口
 const getEnterPages = () => {
-  if (!npm_config_page) {
+  if (!npm_config_page && npm_lifecycle_event !== 'dev') {
     errorLog('请在命令行后以 `--page=页面名称` 格式指定页面名称！')
     process.exit()
   }
   const filterArr = project.filter(
     (item) => item.chunk.toLowerCase() == npm_config_page.toLowerCase()
   )
-  if (!filterArr.length) {
+  if (!filterArr.length && npm_lifecycle_event !== 'dev') {
     errorLog('不存在此页面，请检查页面名称！')
     process.exit()
   }
