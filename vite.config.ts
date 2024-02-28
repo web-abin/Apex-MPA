@@ -41,7 +41,7 @@ const getEnterPages = () => {
 // https://vitejs.dev/config/
 export default defineConfig({
   root: path.resolve(__dirname, `./src/Project/${npm_config_page}`),
-  base: '/',
+  base: './',
   envDir: path.resolve(__dirname), //用于加载 .env 文件的目录。可以是一个绝对路径，也可以是相对于项目根的路径。
   plugins: [
     vue(),
