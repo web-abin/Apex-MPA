@@ -5,8 +5,8 @@ Vue3-Mpa 是一个开箱即用的企业级多页面脚手架，基于 vue3+vite�
 ## 特性 🌼
 
 - 支持命令行一键创建子项目，并且可选是否使用 ts
-- 支持直接启动指定子项目
-- 既支持打包指定子项目、也支持全量打包
+- 支持启动全部子项目 / 直接启动指定子项目
+- 支持打包指定子项目 / 全量打包
 - 打包后的 chunk，各子项目完全脱离解耦，降低风险
 - 配置完善的工程化工具，包括 esint、prettier、stulelint、husky、lint-stage、commitlint
 - 配置一些基本的插件，例如自动引入 Composition API、打包 size 分析工具、打包压缩工具
@@ -19,20 +19,19 @@ Vue3-Mpa 是一个开箱即用的企业级多页面脚手架，基于 vue3+vite�
 │   ├── commit-msg // 规范 commit message 信息
 │   └── verify-commit-msg.mjs  // 脚本：commitlint 替代方案
 ├── dist //打包输出目录
-├── public               // 放在public目录下的资源会被直接复制，不会经过webpack的打包处理
-│   ├── multiPages.json  // 所有子项目的页面文件名和页面说明的集合
 ├── scripts //存放一些脚本
 │   ├── template         // 创建子页面的js模版
 │   ├── template-ts      // 创建子页面的ts模版
 │   ├── build.cjs        // 全量打包的脚本
 │   ├── index.mjs        // 创建子页面的脚本
-│   └── multiPages.json  // 子页面描述说明集合文件
 ├── src
 │   ├── arrets       // 公共静态资源
 │   ├── components   // 公共组件
 │   ├── store        // pinia 共享状态存储库
 │   ├── utils        // 公共方法
 │   └── Projects     // 多页面文件夹
+│       ├── index.html         // 启动全部子项目的重定向导航页面
+│       └── multiPages.json    // 所有子项目的集合
 ├── types  //ts 声明文件
 ├── .env.development   // 开发环境-环境变量
 ├── .env.production    // 生产环境-环境变量
