@@ -1,5 +1,5 @@
 const { exec } = require('child_process')
-const pagesArray = require('./multiPages.json')
+const pagesArray = require('../src/Project/multiPages.json')
 
 // 获取命令行参数
 const args = process.argv

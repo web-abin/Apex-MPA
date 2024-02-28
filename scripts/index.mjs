@@ -30,7 +30,7 @@ process.stdin.on('data', async (chunk) => {
 
   // 获取multiPages.json文件内容，获取当前已有的页面集合
   await fs.readFile(
-    path.resolve('./scripts', 'multiPages.json'),
+    path.resolve('./src/Project', 'multiPages.json'),
     'utf-8',
     (err, data) => {
       //获取老数据
@@ -56,7 +56,7 @@ process.stdin.on('data', async (chunk) => {
   function setFile(datas) {
     // 通过writeFile改变数据内容
     fs.writeFile(
-      path.resolve('./scripts', 'multiPages.json'),
+      path.resolve('./src/Project', 'multiPages.json'),
       JSON.stringify(datas),
       'utf-8',
       (err) => {
