@@ -1,0 +1,176 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+:root {
+  --myFont: PingFangSC-Regular;
+  --myFontMedium: PingFangSC-Medium;
+  --myFontBold: PingFangSC-Semibold;
+}
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+.page {
+  box-sizing: content-box;
+  width: 800px;
+  max-width: 90vw;
+  height: fit-content;
+  padding: 20px;
+}
+body,
+section,
+div,
+p,
+span {
+  font-family: var(--myFont), Avenir, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.625;
+  color: rgb(44, 62, 80);
+  word-break: break-all;
+}
+body,
+div,
+p {
+  box-sizing: border-box;
+}
+
+b {
+  font-family: var(--myFontBold);
+  font-weight: bold;
+}
+
+section {
+  margin-top: 0.1rem;
+}
+
+h1 {
+  width: 100%;
+  margin-bottom: 16px;
+  font-size: 24px;
+  color: rgb(44, 62, 80);
+  text-align: center;
+}
+/* 正文一级标题 */
+h2 {
+  margin-top: 0.2rem;
+  margin-bottom: 0.05rem;
+  font-size: 0.18rem;
+  font-family: var(--myFontBold);
+  font-weight: bold;
+}
+
+/* 正文二级标题 */
+h3 {
+  margin: 0.05rem 0;
+  display: block;
+  font-size: 0.16rem;
+  font-family: var(--myFontBold);
+  font-weight: bold;
+}
+/* 正文三级标题 */
+h4 {
+  font-size: 0.16rem;
+  font-weight: 500;
+  margin: 0.03rem 0;
+}
+
+ul,
+ol {
+  margin-top: 0.05rem;
+  margin-bottom: 0.05rem;
+  padding-left: 0.2rem;
+}
+a,
+.link {
+  color: #3370ff;
+  text-decoration: underline;
+}
+
+/* 表格样式 */
+.table-box {
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: scroll;
+}
+table {
+  --column1: 0.8rem;
+  --column2: 1.5rem;
+  --column3: 1.5rem;
+  --column4: 1.5rem;
+  --column5: 1.8rem;
+  --column6: 1.5rem;
+  --column7: 1.5rem;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+td {
+  border-right: 1px solid #ddd;
+}
+
+table > :is(tbody, thead, tfoot) :is(td, th) {
+  padding: 0.1rem;
+  line-height: 1.4;
+  border-top: 1px solid #ddd;
+  font-size: 15px;
+  word-break: break-word;
+  text-align: center;
+}
+
+/* 每列宽度 */
+tr > :where(td, th):nth-of-type(1) {
+  width: var(--column1);
+  min-width: var(--column1);
+}
+
+tr > :where(td, th):nth-of-type(2) {
+  width: var(--column2);
+  min-width: var(--column2);
+}
+
+tr > :where(td, th):nth-of-type(3) {
+  width: var(--column3);
+  min-width: var(--column3);
+}
+
+tr > :where(td, th):nth-of-type(4) {
+  width: var(--column4);
+  min-width: var(--column4);
+}
+
+tr > :where(td, th):nth-of-type(5) {
+  width: var(--column5);
+  min-width: var(--column5);
+}
+
+tr > :where(td, th):nth-of-type(6) {
+  width: var(--column6);
+  min-width: var(--column6);
+}
+
+tr > :where(td, th):nth-of-type(7) {
+  width: var(--column7);
+  min-width: var(--column7);
+}
+tr > :where(td, th):nth-of-type(8) {
+  width: var(--column8);
+  min-width: var(--column8);
+}
+
+@media screen and (max-width: 540px) {
+  html {
+    font-size: 90px;
+  }
+}
+@media screen and (min-width: 540px) {
+  html {
+    font-size: 100px;
+  }
+}
