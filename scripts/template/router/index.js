@@ -3,7 +3,7 @@ const router = createRouter({
   history: createWebHashHistory(), // hash模式：createWebHashHistory，history模式：createWebHistory
   routes: [
     {
-      path: '/home',
+      path: '/',
       name: 'index',
       component: () => import('@Project/页面名称/views/index.vue'),
       meta: { title: '首页' }
