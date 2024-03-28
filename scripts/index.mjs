@@ -7,6 +7,8 @@ const log = (message) => console.log(chalk.green(`${message}`))
 const successLog = (message) => console.log(chalk.blue(`${message}`))
 const errorLog = (error) => console.log(chalk.red(`${error}`))
 log('请输入要生成的"页面名称:页面描述"、会生成在 /src/Project 目录下')
+
+let isTypescript, inputName, inputDesc
 process.stdin.on('data', async (chunk) => {
   // 获取输入的信息
   const content = String(chunk).trim().toString()
@@ -16,9 +18,9 @@ process.stdin.on('data', async (chunk) => {
     return
   }
   // 拆分用户输入的名称和描述
-  const inputName = content.split(':')[0]
-  const inputDesc = content.split(':')[1] || inputName
-  const isTs = process.env.npm_config_ts
+  inputName = content.split(':')[0]
+  inputDesc = content.split(':')[1] || inputName
+  isTypescript = process.env.npm_config_ts
   successLog(`将在 /src/Project 目录下创建 ${inputName} 文件夹`)
   const targetPath = resolve('./src/Project', inputName)
   // 判断同名文件夹是否存在
@@ -46,14 +48,15 @@ process.stdin.on('data', async (chunk) => {
           chunkName: inputDesc
         }
         datas.push(obj)
-        setFile(datas)
+        setMapFile(datas)
       }
     }
   )
+
   /**
    * 改变multiPages.json
    */
-  function setFile(datas) {
+  function setMapFile(datas) {
     // 通过writeFile改变数据内容
     fs.writeFile(
       path.resolve('./src/Project', 'multiPages.json'),
@@ -64,7 +67,7 @@ process.stdin.on('data', async (chunk) => {
         // 在project中建立新的目录
         fs.mkdirSync(targetPath)
         const sourcePath = resolve(
-          isTs ? './scripts/template-ts' : './scripts/template'
+          isTypescript ? './scripts/template-ts' : './scripts/template'
         )
         copyFile(sourcePath, targetPath)
         process.stdin.emit('end')
@@ -98,6 +101,27 @@ const copyFile = (sourcePath, targetPath) => {
       copyFile(newSourcePath, newTargetPath)
     } else {
       fs.copyFileSync(newSourcePath, newTargetPath)
+      if (file.name === 'routes.ts' || file.name === 'index.js') setRouter()
     }
   })
+}
+
+// 修改路由文件
+const setRouter = () => {
+  const data = fs.readFileSync(
+    path.resolve(
+      `./src/Project/${inputName}/router`,
+      isTypescript ? 'routes.ts' : 'index.js'
+    ),
+    'utf-8'
+  )
+  const router = data.replace(/页面名称/g, inputName)
+  fs.writeFileSync(
+    path.resolve(
+      `./src/Project/${inputName}/router`,
+      isTypescript ? 'routes.ts' : 'index.js'
+    ),
+    router,
+    'utf-8'
+  )
 }

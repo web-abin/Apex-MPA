@@ -16,6 +16,8 @@ const npm_config_page: string = process.env.npm_config_page || ''
 const npm_lifecycle_event: string = process.env.npm_lifecycle_event || ''
 // 命令行报错提示
 const errorLog = (error) => console.log(chalk.red(`${error}`))
+// 生产环境
+const isProducetion = npm_lifecycle_event === 'build'
 
 //获取指定的单页面入口
 const getEnterPages = () => {
